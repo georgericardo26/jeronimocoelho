@@ -1,0 +1,84 @@
+
+<div class="footer-blog">
+    <div class="w3-container footer-inside">
+        <div class="w3-row">
+            <div class="w3-col l3 s12">
+                <h2 class="title-5">
+                    Informações Importantes
+                </h2>
+                <ul class="options-footer">
+
+                    <?php foreach ($admin_footer as $admin_user_item) { ?>
+
+                    <li><p class="link-footer"><?= $admin_user_item->administrador->endereco ?></p> </li>
+                    <li>
+                        <p class="link-footer"><?= $admin_user_item->administrador->telefone_pri ?> - <?= $admin_user_item->administrador->telefone_sec ?></p>
+
+                    </li>
+
+                    <?php } ?>
+                </ul>
+            </div>
+
+
+
+            <div class="w3-col l2 s12">
+                <h2 class="title-5">
+                    Geral
+                </h2>
+                <ul class="options-footer">
+                    <li><a class="link-footer" href="/jeronimo">Jeronimo Coelho</a> </li>
+                    <li><a class="link-footer" href="/servicos">Servicos</a></li>
+                    <li><a class="link-footer" href="/blog">Blog</a></li>
+                    <li><a class="link-footer" href="/duvidas">Duvidas Frequentes</a></li>
+                    <li><a class="link-footer" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="w3-col l4 s12">
+                <h2 class="title-5">
+                    Links Importantes
+                </h2>
+                <ul class="options-footer">
+                    <li><a class="link-footer" href="http://www.auanet.org/" target="_blank">American Urological Association</a> </li>
+                    <li><a class="link-footer" href="http://www.europeanurology.com/" target="_blank">European Association of Urology</a></li>
+                    <li><a class="link-footer" href="http://www.uroweb.org/" target="_blank">European Urology Jornal</a></li>
+                    <li><a class="link-footer" href="http://www.sbu.org.br/" target="_blank">Sociedade Brasileira de Urologia</a></li>
+                    <li><a class="link-footer" href="http://www.sbu-sp.org.br/" target="_blank">Sociedade Brasileira de Urologia – Seção São Paulo</a></li>
+
+                    <li><a class="link-footer" href="http://www.issm.info/" target="_blank">Sociedade Internacional de Medicina Sexual</a> </li>
+                    <li><a class="link-footer" href="http://www.urologista.com.br/www.slamsnet.org" target="_blank">Sociedade Latino-Americana de Medicina Sexual</a></li>
+                    <li><a class="link-footer" href="http://www.slamsnet.org/pt">Sociedade Latino-Americana de Medicina Sexual</a></li>
+                    <li><a class="link-footer" href="http://www.siu-urology.org/" target="_blank">Société Internationale d’Urologie</a></li>
+                    <li><a class="link-footer" href="http://www.baus.org.uk/" target="_blank">The British Association of Urological Surgeons</a></li>
+
+                    <li><a class="link-footer" href="http://www.urologyhealth.org/" target="_blank">Urology Care Foundation</a></li>
+                    <li><a class="link-footer" href="http://urologytimes.modernmedicine.com/" target="_blank">Urology Times</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="w3-col l3 s12">
+                <img class="logo-footer" src="<?= $this->url->getStatic('assets/images/logo_mini.png') ?>">
+                <p class="link-footer-logo">&copy; 2019 <b>Jeronimo Coelho</b>.<br>Todos os direitos reservados.<p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?= $this->assets->outputJs('footer') ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/jssor.slider.min.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/slider.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/slide-rate.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/questions.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/moment.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/handDate.js', false) ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/base.js', true) ?>
+<!--<?= $this->tag->javascriptInclude('http://maps.googleapis.com/maps/api/js?key=AIzaSyDHQQJXaGAMJgvpXBFM_Hcv_1-Geg0o1UE&amp;sensor=false') ?> -->
+<?= $this->tag->javascriptInclude('https://maps.googleapis.com/maps/api/js?key=AIzaSyDHQQJXaGAMJgvpXBFM_Hcv_1-Geg0o1UE&callback=initMap') ?>
+<?= $this->tag->javascriptInclude('http://estudos:8888/public/assets/js/map.js', false) ?>
+
+
+
+

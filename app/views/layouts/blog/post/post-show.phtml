@@ -1,0 +1,86 @@
+{{ partial('layouts/blog/post/post-first') }}
+
+<div class="content-inside-blog-urology">
+
+    {% for item_post_main in post %}
+
+        {% set arr = [static_url('assets/img/img_blog/'), item_post_main.galeria.imagem] %}
+        {% set img = arr|join('') %}
+        <div class="row">
+            <div id="column-1" class="col-md-2">
+                <br>
+            </div>
+            <div id="column-2" class="col-md-8">
+                <h1 class="title-1-blog">{{ item_post_main.blog.titulo }}</h1>
+
+                <div class="author-blog-page">
+                    <div class="avatar">
+                        <img class="avatar-image" src="{{static_url('public/assets/images/user-icon.jpg')}}">
+                    </div>
+                    <div class="content-avatar">
+                        <p class="avatar-name">
+                        {% for item_admin in admin_user %}
+
+                            {{ item_admin.administrador.usuario }}
+
+                        {% endfor %}
+                        <br>
+
+                        <span class="like" data-post="{{ item_blog.blog.id }}">
+                               <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                        </span>
+                        <span class="amount-like">
+                                {{ item_post_main.blog.qtd_like }}
+                        </span>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="image-entry-blog">
+                    <img class="img-blog-page" src="{{ img }}">
+                </div>
+
+                <div class="sub-content-blog">
+                    <div class="row">
+
+                        {{ item_post_main.blog.conteudo }}
+
+                    </div>
+                </div>
+
+            </div>
+            <div  id="column-3" class="col-md-2">
+                <br>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+<div class="comments">
+    <div id="disqus_thread"></div>
+</div>
+
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://jeronimocoelho.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{{ partial('layouts/blog/post/post-second') }}

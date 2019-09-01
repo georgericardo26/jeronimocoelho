@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+
+<div class="content-inside-video-entry">
+    <div class="content-inside-cover-urol">
+        <div class="row">
+            <div class="entry-head-blog-into col-md-12 text-center">
+                <h1>Se liga nos videos!</h1>
+                <img class="entry-head-blog-img" src="/assets/images/icon-video-entry.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-inside-blog-3">
+
+    <div class="all-content">
+        <div class="row">
+
+            <?php foreach ($video as $item_video) { ?>
+
+                <div class="col-md-4 post-single">
+                    <a class="link-blog" href="#">
+
+                        <div class="video-entry">
+                            <div class="video-mockup">
+                                <div class="embed-responsive embed-responsive-16by9">
+
+                                    <iframe class="embed-responsive-item"
+                                            src="<?= helpers\Utils::upper($item_video->multimedia->url) ?>"></iframe>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- https://youtu.be/76btzsQ2_DY-->
+
+                        <div class="title-content-featured">
+                            <p class="subtitle-3"><?= $item_video->categorias->categoria ?></p>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+            <?php } ?>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- blog resume-->
+<?= $this->partial('layouts/resume_blog') ?>
+
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

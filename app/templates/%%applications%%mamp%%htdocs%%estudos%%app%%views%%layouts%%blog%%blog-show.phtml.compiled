@@ -1,0 +1,92 @@
+<?= $this->partial('layouts/blog/blog-first') ?>
+    <div class="entry-main-blog">
+
+      <!-- por enquanto -->
+
+        <div class="main-init">
+            <?php foreach ($post_main as $item_blog_main) { ?>
+
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog_main->galeria->imagem]; ?>
+            <?php $url = ['blog/post/', $item_blog_main->blog->id]; ?>
+            <?php $img = join($arr, ''); ?>
+            <?php $url_post = join($url, ''); ?>
+                <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="img-entry">
+                                <img src="<?= $img ?>">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="title-content-featured">
+                                <p class="subtitle-3"><?= $item_blog_main->blog->titulo ?></p>
+                                <p class="text-content-part">
+                                    <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...</p>
+
+                                <div class="author-blog list-inline">
+                                    <div class="list-inline-item photo-blog">
+                                        <img src="<?= $this->url->getStatic('public/assets/images/user-icon.jpg') ?>">
+                                    </div>
+                                    <div class="list-inline-item photo-blog"><p class="title-3"> <?php foreach ($admin_user as $item_admin) { ?>
+                                            <?= $item_admin->usuario ?>
+                                            <?php } ?></p>
+                                    </div>
+                                    <span class="date-post"><?= $item_blog_main->blog->dt_cad ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <?php } ?>
+        </div>
+
+
+
+      <!-- SEGUNDO por enquanto -->
+
+        <div class="all-content">
+            <div class="row">
+                <?php foreach ($blog as $item_blog) { ?>
+
+                <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+                <?php $url = ['blog/post/', $item_blog->blog->id]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php $url_post = join($url, ''); ?>
+
+                <div class="col-md-4 post-single">
+                    <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+
+                        <div class="img-entry">
+                            <img src="<?= $img ?>">
+                        </div>
+
+                        <div class="title-content-featured">
+                            <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                            <p class="text-content-part">
+                                <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...<span>Ver mais</span></p>
+                                <div class="author-blog list-inline">
+                                    <div class="list-inline-item photo-blog">
+                                        <img src="<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>">
+                                    </div>
+                                    <div class="list-inline-item photo-blog"><p class="title-3">
+                                <?php foreach ($admin_user as $item_admin) { ?>
+                                <?= $item_admin->usuario ?>
+                                <?php } ?>
+                            </p>
+                        </div>
+                        <span class="date-post"><?= $item_blog->blog->dt_cad ?></span>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <?php } ?>
+
+     </div>
+  </div>
+
+
+    </div>
+
+<?= $this->partial('layouts/blog/blog-second') ?>

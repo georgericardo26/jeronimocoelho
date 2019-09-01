@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="content-inside-post-entry">
+    <div class="row">
+        <div class="entry-head-blog col-md-12 text-left">
+            <h1>Post</h1>
+        </div>
+    </div>
+</div>
+<div class="content-inside-post-second">
+
+
+    <div class="init-bar-blog">
+        <div class="row">
+
+            <div class="col-md-6">
+                <ul class="social-media list-inline">
+
+
+                    <?= $this->partial('layouts/blog/search') ?>
+
+                </ul>
+            </div>
+
+
+            <div class="col-md-6">
+                <ul class="paginator list-inline">
+
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/postpage/<?= $previous ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-previous.png') ?>">
+
+                        </a></li>
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/postpage/<?= $next ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-next.png') ?>">
+
+                        </a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <hr>
+</div>

@@ -1,0 +1,102 @@
+<?= $this->partial('layouts/blog/blog-first') ?>
+<div class="entry-main-blog">
+    <!-- por enquanto -->
+    <div class="main-init">
+        <?php $v172251410767051135061iterator = $blog->items; $v172251410767051135061incr = 0; $v172251410767051135061loop = new stdClass(); $v172251410767051135061loop->self = &$v172251410767051135061loop; $v172251410767051135061loop->length = count($v172251410767051135061iterator); $v172251410767051135061loop->index = 1; $v172251410767051135061loop->index0 = 1; $v172251410767051135061loop->revindex = $v172251410767051135061loop->length; $v172251410767051135061loop->revindex0 = $v172251410767051135061loop->length - 1; ?><?php foreach ($v172251410767051135061iterator as $item_blog_main) { ?><?php $v172251410767051135061loop->first = ($v172251410767051135061incr == 0); $v172251410767051135061loop->index = $v172251410767051135061incr + 1; $v172251410767051135061loop->index0 = $v172251410767051135061incr; $v172251410767051135061loop->revindex = $v172251410767051135061loop->length - $v172251410767051135061incr; $v172251410767051135061loop->revindex0 = $v172251410767051135061loop->length - ($v172251410767051135061incr + 1); $v172251410767051135061loop->last = ($v172251410767051135061incr == ($v172251410767051135061loop->length - 1)); ?>
+        <?php if ($v172251410767051135061loop->first) { ?>
+
+        <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog_main->galeria->imagem]; ?>
+        <?php $url = ['blog/post/', $item_blog_main->blog->id]; ?>
+        <?php $img = join($arr, ''); ?>
+        <?php $url_post = join($url, ''); ?>
+        <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="img-entry">
+                        <img src="<?= $img ?>">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="title-content-featured">
+                        <p class="subtitle-3"><?= $item_blog_main->blog->titulo ?></p>
+                        <p class="text-content-part">
+                            <?= strip_tags(substr($item_blog_main->blog->conteudo, 0 ,200)) ?>...<span>Ver mais</span></p>
+
+                        <div class="author-blog list-inline">
+                            <div class="list-inline-item photo-blog">
+                                <img src="<?= $this->url->getStatic('public/assets/images/user-icon.jpg') ?>">
+                            </div>
+                            <div class="list-inline-item photo-blog"><p class="title-3">
+                                    <?php foreach ($admin_user as $admin_user_item) { ?>
+                                    <?= $admin_user_item->administrador->usuario ?>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                            <span class="date-post"><?= $item_blog_main->blog->dt_cad ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <?php } ?>
+        <?php $v172251410767051135061incr++; } ?>
+    </div>
+
+
+
+    <!-- SEGUNDO por enquanto -->
+
+    <div class="all-content">
+        <div class="row">
+            <?php $v172251410767051135061iterator = $blog->items; $v172251410767051135061incr = 0; $v172251410767051135061loop = new stdClass(); $v172251410767051135061loop->self = &$v172251410767051135061loop; $v172251410767051135061loop->length = count($v172251410767051135061iterator); $v172251410767051135061loop->index = 1; $v172251410767051135061loop->index0 = 1; $v172251410767051135061loop->revindex = $v172251410767051135061loop->length; $v172251410767051135061loop->revindex0 = $v172251410767051135061loop->length - 1; ?><?php foreach ($v172251410767051135061iterator as $item_blog) { ?><?php $v172251410767051135061loop->first = ($v172251410767051135061incr == 0); $v172251410767051135061loop->index = $v172251410767051135061incr + 1; $v172251410767051135061loop->index0 = $v172251410767051135061incr; $v172251410767051135061loop->revindex = $v172251410767051135061loop->length - $v172251410767051135061incr; $v172251410767051135061loop->revindex0 = $v172251410767051135061loop->length - ($v172251410767051135061incr + 1); $v172251410767051135061loop->last = ($v172251410767051135061incr == ($v172251410767051135061loop->length - 1)); ?>
+            <?php if ($v172251410767051135061loop->first == false) { ?>
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+            <?php $url = ['blog/post/', $item_blog->blog->id]; ?>
+            <?php $img = join($arr, ''); ?>
+            <?php $url_post = join($url, ''); ?>
+
+            <div class="col-md-4 post-single">
+                <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+
+                    <div class="img-entry">
+                        <img src="<?= $img ?>">
+                    </div>
+
+                    <div class="title-content-featured">
+                        <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                        <p class="text-content-part">
+                            <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...<span>Ver mais</span></p>
+
+                    </div>
+                </a>
+
+                <div class="author-blog list-inline">
+                    <div class="list-inline-item photo-blog">
+                        <img src="<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>">
+                    </div>
+                    <div class="list-inline-item photo-blog"><p class="title-3">
+                            <?php foreach ($admin_footer as $item_admin) { ?>
+                            <?= $item_admin->administrador->usuario ?>
+                            <?php } ?>
+                        </p>
+                    </div>
+                    <span class="like" data-post="<?= $item_blog->blog->id ?>">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                    </span>
+                    <span class="amount-like">
+                                <?= $item_blog->blog->qtd_like ?>
+                    </span>
+                </div>
+            </div>
+            <?php } ?>
+            <?php $v172251410767051135061incr++; } ?>
+
+        </div>
+    </div>
+
+</div>
+
+
+<?= $this->partial('layouts/blog/blog-second') ?>

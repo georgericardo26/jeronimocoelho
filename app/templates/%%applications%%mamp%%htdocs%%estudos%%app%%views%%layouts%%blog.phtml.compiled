@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="content-inside-blog-entry">
+    <div class="row">
+        <div class="entry-head-blog col-md-12 text-center">
+            <h1>Acompanhe as útimas notícias</h1>
+            <img class="entry-head-blog-img" src="<?= $this->url->getStatic('assets/images/icon-blog-entry.png') ?>">
+        </div>
+    </div>
+</div>
+<div class="content-inside-blog-second">
+    <div class="init-bar-blog">
+        <ul class="social-media list-inline">
+            <li class="list-inline-item"><svg id="search-icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="icon-svg svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><input class="input-search" placeholder="Pesquisar">
+            </li>
+            <li class="list-inline-item"><a href="#"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="icon-svg svg-inline--fa fa-facebook fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li>
+            <li class="list-inline-item"><a href="#"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" class="icon-svg svg-inline--fa fa-facebook fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li>
+        </ul>
+    </div>
+    <hr>
+
+    <div class="entry-main-blog">
+
+      <!-- por enquanto -->
+
+        <div class="main-init">
+            <?php foreach ($post_main as $item_blog_main) { ?>
+
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog_main->galeria->imagem]; ?>
+            <?php $url = ['blog/', $item_blog_main->blog->id]; ?>
+            <?php $img = join($arr, ''); ?>
+            <?php $url_post = join($url, ''); ?>
+                <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="img-entry">
+                                <img src="<?= $img ?>">
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="title-content-featured">
+                                <p class="subtitle-3"><?= $item_blog_main->blog->titulo ?></p>
+                                <p class="text-content-part">
+                                    <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...</p>
+
+                                <div class="author-blog list-inline">
+                                    <div class="list-inline-item photo-blog">
+                                        <img src="<?= $this->url->getStatic('public/assets/images/user-icon.jpg') ?>">
+                                    </div>
+                                    <div class="list-inline-item photo-blog"><p class="title-3"> <?php foreach ($admin_user as $item_admin) { ?>
+                                            <?= $item_admin->usuario ?>
+                                            <?php } ?></p>
+                                    </div>
+                                    <span class="date-post"><?= $item_blog_main->blog->dt_cad ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <?php } ?>
+        </div>
+
+
+
+      <!-- SEGUNDO por enquanto -->
+
+        <div class="all-content">
+            <div class="row">
+                <?php foreach ($blog as $item_blog) { ?>
+
+                <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+                <?php $url = ['blog/', $item_blog->blog->id]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php $url_post = join($url, ''); ?>
+
+                <div class="col-md-4 post-single">
+                    <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+
+                        <div class="img-entry">
+                            <img src="<?= $img ?>">
+                        </div>
+
+                        <div class="title-content-featured">
+                            <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                            <p class="text-content-part">
+                                <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...<span>Ver mais</span></p>
+                                <div class="author-blog list-inline">
+                                    <div class="list-inline-item photo-blog">
+                                        <img src="<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>">
+                                    </div>
+                                    <div class="list-inline-item photo-blog"><p class="title-3">
+                                <?php foreach ($admin_user as $item_admin) { ?>
+                                <?= $item_admin->usuario ?>
+                                <?php } ?>
+                            </p>
+                        </div>
+                        <span class="date-post"><?= $item_blog->blog->dt_cad ?></span>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <?php } ?>
+
+     </div>
+  </div>
+
+
+    </div>
+</div>
+
+
+<div class="entry subs-background">
+    <h1 class="subtitle-5">Inscreva-se para acompanhar as novidades</h1>
+    <div class="sub-class-sbs">
+        <input class="subscription" id="sub" placeholder="Escreva seu e-mail aqui"><span>Enviar</span>
+    </div>
+</div>
+
+<!-- blog resume -->
+<?= $this->partial('layouts/resume_blog') ?>
+
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

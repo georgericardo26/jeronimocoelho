@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="entry content-inside-blog-3">
+    <div class="row">
+        <div class="col-md-6 section-about-us text-center">
+            <h1 class="title-about-us">Saiba os nossos <span>Serviços prestados</span></h1>
+            <p class="subtitle-about-us">Veja todos os nossos serviços.</p>
+
+        </div>
+
+        <div class="col-md-6 section-about-us-image">
+            <div class="image-about-us">
+                <img src='<?= $this->url->getStatic('assets/images/back-office-services.png') ?>'>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="entry content-inside-blog-4">
+    <div class="about-us-qualify">
+        <h1 class="title-1">Serviços</h1>
+    </div>
+
+
+    <div class="qualifications-text">
+        <div class="row inside-services">
+            <div class="col-md-6">
+
+                <?php $count = 0; ?>
+
+                <?php foreach ($services1 as $index => $item_serv1) { ?>
+
+                <div class="tab-services">
+                    <div class="number-service">
+                        <?php $count += 1; ?>
+                        <?= $count ?>
+                    </div>
+                    <div class="content-service">
+                        <?= $item_serv1->servico ?>
+                    </div>
+                </div>
+
+                <?php } ?>
+
+            </div>
+
+
+            <div class="col-md-6">
+
+                <?php foreach ($services2 as $index => $item_serv2) { ?>
+
+                <div class="tab-services">
+                    <div class="number-service">
+                        <?php $count += 1; ?>
+                        <?= $count ?>
+                    </div>
+                    <div class="content-service">
+                        <?= $item_serv2->servico ?>
+                    </div>
+                </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-inside-blog-3">
+    <div class="container">
+
+
+        <div class="photo-gallery" ID="ngy2p222" data-nanogallery2='{
+        "itemsBaseURL": "http://estudos:8888/jeronimo/images/office/",
+        "thumbnailWidth": "auto",
+        "thumbnailDisplayTransition": "flipDown",
+        "thumbnailHoverEffect2": "imageScaleIn80|imageSepiaOff|labelAppear75",
+        "thumbnailAlignment": "center"
+      }'>
+
+            <?php foreach ($galeria_clinic as $item_galeria_clinic) { ?>
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_galeria_clinic->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+
+            <a class="photo-gallery-img" href="assets/images/office/1.jpg" data-ngthumb="assets/images/office/1.jpg" data-ngdesc="">Imagem Consultório</a>
+
+            <?php } ?>
+        </div>
+
+    </div>
+</div>
+
+<!-- blog resume -->
+<?= $this->partial('layouts/resume_blog') ?>
+
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

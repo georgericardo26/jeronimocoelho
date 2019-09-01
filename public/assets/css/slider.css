@@ -1,0 +1,251 @@
+/* jssor slider loading skin spin css */
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes jssorl-009-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.incoming-slider{min-height: 50px;}
+.jssorb031 {position:absolute;}
+.jssorb031 .i {position:absolute;cursor:pointer;}
+.jssorb031 .i .b {fill:#000;fill-opacity:0.5;stroke:#fff;stroke-width:1200;stroke-miterlimit:10;stroke-opacity:0.3;}
+.jssorb031 .i:hover .b {fill:#fff;fill-opacity:.7;stroke:#000;stroke-opacity:.5;}
+.jssorb031 .iav .b {fill:#fff;stroke:#000;fill-opacity:1;}
+.jssorb031 .i.idn {opacity:.3;}
+
+.jssora051 {display:block;position:absolute;cursor:pointer;}
+.jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+.jssora051:hover {opacity:.8;}
+.jssora051.jssora051dn {opacity:.5;}
+.jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+.slide-appear-content {
+    max-width: 400px;
+    word-wrap:break-word;
+    margin-left: 13%;
+    margin-top: 7%;
+}
+
+.slide-appear-content-right {
+    max-width: 400px;
+    word-wrap: break-word;
+    float: right;
+    margin-right: 13%;
+    margin-top: 7%;
+}
+
+.slide-appear-content-left {
+    max-width: 400px;
+    word-wrap: break-word;
+    float: left;
+    margin-left: 13%;
+    margin-top: 7%;
+}
+.slider1_container {
+    visibility: hidden; position: relative; margin: 0 auto;
+    top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;
+}
+
+.slides {
+    position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;
+}
+
+.element {
+
+    width: 420px;
+    left: 0px;
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 6;
+    height: 110px;
+    top: 0px;
+    background-color: rgb(64, 170, 207);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+    background-image: url("https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1552323771154x892275456832386700%2F%25D0%25BF%25D0%25B0%25D1%2582%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD_%25D0%25B1%25D0%25BB%25D0%25BE%25D0%25B3-01.jpg?w=512&h=134&auto=compress&fit=crop");
+
+}
+.slide-appear-content h1 {
+    text-transform: uppercase;
+    color: #191919;
+    font-size: 40px;
+}
+.slide-appear-content span {
+    text-transform: uppercase;
+    color: #00c4a9;
+}
+.slide-appear-content p {
+    color: #3b3b3b;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+
+.slide-appear-content-right h1 {
+    text-transform: uppercase;
+    color: #191919;
+    font-size: 40px;
+}
+.slide-appear-content-right span {
+    text-transform: uppercase;
+    color: #00c4a9;
+}
+.slide-appear-content-right p {
+    color: #3b3b3b;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.slide-appear-content-left h1 {
+    text-transform: uppercase;
+    color: #191919;
+    font-size: 40px;
+}
+.slide-appear-content-left span {
+    text-transform: uppercase;
+    color: #00c4a9;
+}
+.slide-appear-content-left p {
+    color: #3b3b3b;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+
+
+.btn-custom-slider {
+    background-color: #00c4a9!important;
+    color: #fff!important;
+    border-radius: 20px!important;
+    border: transparent!important;
+    padding-right: 40px;
+    padding-left: 40px;
+
+}
+
+.btn-custom-slider:hover {
+    background-color: #00c4a9!important;
+    color: #fff!important;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px 19px;
+    margin-top: -22px;
+    color: #00c4a9!important;
+    border: solid #00c4a9 2px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 30px;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: #00c4a9;
+    color: #fff!important;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade_slider {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+.slide-desktop {
+    display: block;
+}
+.slide-mobile {
+    display: none;
+}
+
+/********************************* MOBILE ******************************/
+@media (max-width: 800px){
+    .slide-desktop {
+        display: none;
+    }
+    .slide-mobile {
+        display: block;
+    }
+}

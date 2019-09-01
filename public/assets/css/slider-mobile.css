@@ -1,0 +1,16 @@
+/*@media (max-width: 576px) {
+
+    #navbar-desktop {
+        display: none!important;
+    }
+
+    .slider1_container {
+        visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 500px; height: 800px; overflow: hidden;
+    }
+
+    .slides {
+        position: absolute; left: 0px; top: 0px; width: 500px; height: 800px; overflow: hidden;
+    }
+
+}*/

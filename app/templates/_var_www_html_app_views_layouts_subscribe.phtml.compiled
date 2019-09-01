@@ -1,0 +1,6 @@
+<div class="entry subs-background">
+    <h1 class="subtitle-5">Inscreva-se para acompanhar as novidades</h1>
+    <div class="sub-class-sbs">
+        <input class="subscription" id="sub" placeholder="Escreva seu e-mail aqui"><span>Enviar</span>
+    </div>
+</div>

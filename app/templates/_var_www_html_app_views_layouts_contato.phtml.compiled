@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+
+
+<div class="entry content-inside-blog-5">
+    <div class="row">
+        <div class="col-md-6 section-question-us text-center">
+            <h1 class="title-about-us">Contato</h1>
+            <p class="subtitle-about-us"></p>
+
+        </div>
+
+        <div class="col-md-6 section-about-us-image text-center">
+            <div class="contact-img">
+                <?= $this->tag->image([$this->url->getStatic('assets/images/contact-icon.png'), 'alt' => 'contato']) ?>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="content-inside-blog">
+
+    <h1 class="title-1">Entre em contato conosco</h1>
+    <p class="subtitle-1">Ficaremos muito felizes de receber seu contato.</p>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-contact">
+
+                    <?= $this->tag->form(['contato/form', 'method' => 'post']) ?>
+                    <label for="name">Nome:</label>
+                    <?= $this->tag->textField(['name', 'class' => 'form-control form-contact-input']) ?>
+                    <br>
+                    <label for="subject">Assunto:</label>
+                    <?= $this->tag->textField(['subject', 'class' => 'form-control form-contact-input']) ?>
+                    <br>
+                    <label for="email">E-mail:</label>
+                    <?= $this->tag->textField(['email', 'class' => 'form-control form-contact-input']) ?>
+                    <br>
+                    <label for="msg">Mensagem:</label>
+                    <?= $this->tag->textArea(['msg', 'rows' => 6, 'class' => 'form-control form-contact-input']) ?>
+                    <br>
+                    <?= $this->tag->hiddenField(['status', 'value' => '1']) ?>
+                    <?= $this->tag->submitButton(['Search', 'class' => 'btn btn-primary', 'value' => 'Enviar']) ?>
+                    <?= $this->tag->endform() ?>
+
+                </div>
+                <?= $sucess ?>
+            </div>
+
+            <div class="col-md-6 section-about-us-image">
+                <div class="image-about-us">
+                    <?= $this->tag->image([$this->url->getStatic('assets/images/back-office-services.png'), 'alt' => 'consultorio']) ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div id="map"></div>
+<?= $this->partial('layouts/subscribe') ?>
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+
+</body>
+</html>

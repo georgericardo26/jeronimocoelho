@@ -1,0 +1,53 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-bar-custom">
+    <div class="container">
+
+        <a class="navbar-brand" href="/"><!--<img src="images/logo_mini.png">-->
+            <div class="items-navbar list-inline">
+                <div class="list-inline-item">
+                    <?= $this->tag->image(['assets/images/logo_mini.png', 'class' => 'img-navbar', 'alt' => 'jeronimo coelho']) ?>
+                </div>
+                <div class="list-inline-item text-navbar">
+                    <?= $text_menu ?>
+                </div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quem Somos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/jeronimo">Jeronimo Coelho</a>
+                        <a class="dropdown-item" href="/servicos">Servicos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Urologia</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/urologia/disfuncao">Disfuncao Eretil</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diversos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/blog">Blog</a>
+                        <a class="dropdown-item" href="/duvidas">Duvidas Frenquentes</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/contato" class="nav-link">Contato</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+

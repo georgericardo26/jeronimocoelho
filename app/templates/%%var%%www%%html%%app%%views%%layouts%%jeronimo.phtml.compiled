@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="entry content-inside-blog-3">
+    <div class="row">
+        <div class="col-md-6 section-about-us text-center">
+            <h1 class="title-about-us">Conheça <span>Jerônimo Coelho</span></h1>
+            <p class="subtitle-about-us">Conheça um pouco mais sobre seu trabalho.</p>
+
+        </div>
+
+        <div class="col-md-6 section-about-us-image">
+            <div class="image-about-us">
+                <img src='<?= $this->url->getStatic('assets/images/doctor.png') ?>'>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="content-inside-blog-3">
+
+    <h1 class="title-1">Quem é Dr. Jerônimo Coelho?</h1>
+    <p class="subtitle-1"></p>
+
+    <div class="sub-content-blog">
+        <div class="text-about-us">
+            <?php foreach ($admin_user as $admin_user_item) { ?>
+            <?= $admin_user_item->sobre ?>
+            <?php } ?>
+        </div>
+        <div class="photo-about-us">
+            <?php foreach ($admin_user as $admin_user_item) { ?>
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $admin_user_item->galeria->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+
+            <img class="photo-about-profile" src='<?= $img ?>'>
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+    <div class="second-part-about-us">
+        <ul class="list-inline badges">
+
+            <?php foreach ($badges as $item_badges) { ?>
+
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_badges->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+            <li class="badges-item list-inline-item"><img src="<?= $img ?>"></li>
+            <?php } ?>
+
+        </ul>
+    </div>
+
+    <div class="under-line">
+    </div>
+</div>
+
+<div class="entry content-inside-blog-2">
+    <div class="about-us-qualify">
+        <h1 class="title-1">Qualificações</h1>
+    </div>
+
+
+    <div class="qualifications-text">
+        <div class="row inside-qualifications">
+            <div class="col-md-6 into-strip">
+
+                <?php foreach ($qualifications1 as $item_qualif1) { ?>
+                <div class="strip-left">
+                    <?= $item_qualif1->formacao ?>
+                </div>
+                <?php } ?>
+
+            </div>
+            <div class="col-md-6 into-strip">
+
+                <?php foreach ($qualifications2 as $item_qualif2) { ?>
+
+                <div class="strip-left">
+                    <?= $item_qualif2->formacao ?>
+                </div>
+
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content-inside-blog-3">
+    <div class="container">
+
+
+        <div class="photo-gallery" ID="ngy2p222" data-nanogallery2='{
+        "itemsBaseURL": "http://estudos:8888/jeronimo/images/office/",
+        "thumbnailWidth": "auto",
+        "thumbnailDisplayTransition": "flipDown",
+        "thumbnailHoverEffect2": "imageScaleIn80|imageSepiaOff|labelAppear75",
+        "thumbnailAlignment": "center"
+      }'>
+
+            <?php foreach ($galeria_clinic as $item_galeria_clinic) { ?>
+            <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_galeria_clinic->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+
+            <a class="photo-gallery-img" href="assets/images/office/1.jpg" data-ngthumb="assets/images/office/1.jpg" data-ngdesc="">Imagem Consultório</a>
+
+            <?php } ?>
+        </div>
+
+    </div>
+</div>
+
+<!-- blog resume -->
+<?= $this->partial('layouts/resume_blog') ?>
+
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

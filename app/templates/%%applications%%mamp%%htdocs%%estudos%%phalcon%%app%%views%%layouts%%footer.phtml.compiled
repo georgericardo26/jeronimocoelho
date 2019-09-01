@@ -1,0 +1,73 @@
+
+<div class="footer-blog">
+    <div class="container footer-inside">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="title-5">
+                    Informações Importantes
+                </h2>
+                <ul class="options-footer">
+
+                    <?php foreach ($admin_user as $admin_user_item) { ?>
+
+                    <li><p class="link-footer"><?= $admin_user_item->endereco ?></p> </li>
+                    <li>
+                        <p class="link-footer"><?= $admin_user_item->telefone_pri ?> - <?= $admin_user_item->telefone_sec ?></p>
+
+                    </li>
+
+                    <?php } ?>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-2">
+                <h2 class="title-5">
+                    Geral
+                </h2>
+                <ul class="options-footer">
+                    <li><a class="link-footer" href="/jeronimo">Jeronimo Coelho</a> </li>
+                    <li><a class="link-footer" href="/servicos">Servicos</a></li>
+                    <li><a class="link-footer" href="/blog">Blog</a></li>
+                    <li><a class="link-footer" href="/duvidas">Duvidas Frequentes</a></li>
+                    <li><a class="link-footer" href="/contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="title-5">
+                    Links Importantes
+                </h2>
+                <ul class="options-footer">
+                    <li><a class="link-footer" href="http://www.auanet.org/" target="_blank">American Urological Association</a> </li>
+                    <li><a class="link-footer" href="http://www.europeanurology.com/" target="_blank">European Association of Urology</a></li>
+                    <li><a class="link-footer" href="http://www.uroweb.org/" target="_blank">European Urology Jornal</a></li>
+                    <li><a class="link-footer" href="http://www.sbu.org.br/" target="_blank">Sociedade Brasileira de Urologia</a></li>
+                    <li><a class="link-footer" href="http://www.sbu-sp.org.br/" target="_blank">Sociedade Brasileira de Urologia – Seção São Paulo</a></li>
+
+                    <li><a class="link-footer" href="http://www.issm.info/" target="_blank">Sociedade Internacional de Medicina Sexual</a> </li>
+                    <li><a class="link-footer" href="http://www.urologista.com.br/www.slamsnet.org" target="_blank">Sociedade Latino-Americana de Medicina Sexual</a></li>
+                    <li><a class="link-footer" href="http://www.slamsnet.org/pt">Sociedade Latino-Americana de Medicina Sexual</a></li>
+                    <li><a class="link-footer" href="http://www.siu-urology.org/" target="_blank">Société Internationale d’Urologie</a></li>
+                    <li><a class="link-footer" href="http://www.baus.org.uk/" target="_blank">The British Association of Urological Surgeons</a></li>
+
+                    <li><a class="link-footer" href="http://www.urologyhealth.org/" target="_blank">Urology Care Foundation</a></li>
+                    <li><a class="link-footer" href="http://urologytimes.modernmedicine.com/" target="_blank">Urology Times</a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="col-md-3">
+                <img class="logo-footer" src="assets/images/logo_mini.png">
+                <p class="link-footer-logo">&copy; 2019 <b>Jeronimo Coelho</b>.<br>Todos os direitos reservados.<p></p>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<?= $this->assets->outputJs('footer') ?>
+

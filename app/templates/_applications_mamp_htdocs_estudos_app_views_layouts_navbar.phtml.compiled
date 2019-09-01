@@ -1,0 +1,119 @@
+<style>
+    @media (max-width: 500px) {
+        .navbar {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-bar-custom" id="navbar-desktop">
+    <div class="container">
+        <a class="navbar-brand" href="/"><!--<img src="images/logo_mini.png">-->
+            <div class="items-navbar list-inline">
+                <div class="list-inline-item">
+                    <?= $this->tag->image(['assets/images/logo_mini.png', 'class' => 'img-navbar', 'alt' => 'jeronimo coelho']) ?>
+                </div>
+                <div class="list-inline-item text-navbar">
+                    <a class="text-menu-navbar" href="/"><?= $text_menu ?></a>
+                </div>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quem Somos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/jeronimo">Jeronimo Coelho</a>
+                        <a class="dropdown-item" href="/servicos">Servicos</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="/urologia" class="nav-link">Urologia</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diversos</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/blog">Blog</a>
+                        <a class="dropdown-item" href="/duvidas">Duvidas Frenquentes</a>
+                        <a class="dropdown-item" href="/videos">Vídeos</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/contato" class="nav-link">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<nav class="navbar-mobile" id="navbar-mobile">
+    <div class="w3-container">
+        <div class="zone">
+           <div class="img-logo-mobile">
+               <ul class="list-inline">
+                 <li class="list-inline-item">
+                     <?= $this->tag->image(['assets/images/logo_mini.png', 'class' => 'img-navbar', 'alt' => 'jeronimo coelho']) ?>
+                 </li>
+                 <li class="list-inline-item text-navbar-mobile">
+                     <a class="text-menu-navbar" href="/"><?= $text_menu ?></a>
+                 </li>
+               </ul>
+           </div>
+            <div class="button-navbar-mobile">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="sidebar-mobile">
+    <div class="w3-container">
+
+        <div class="menu-items">
+            <div class="menu-item-simple">
+               <a href="/" class="nav-link">Inicio</a>
+            </div>
+            <div class="menu-item-dropdown">
+                <a href="javascript:void(0)" class="nav-link dropdown-toggle item-dropdown-menu">Quem Somos</a>
+                <div class="item-dropdown">
+                    <a class="dropdown-item" href="/jeronimo">Jeronimo Coelho</a>
+                </div>
+                <div class="item-dropdown">
+                    <a class="dropdown-item" href="/servicos">Servicos</a>
+                </div>
+            </div>
+
+            <div class="menu-item-simple">
+                <a href="/urologia" class="nav-link">Urologia</a>
+            </div>
+
+            <div class="menu-item-dropdown">
+                <a href="javascript:void(0)" class="nav-link dropdown-toggle item-dropdown-menu">Diversos</a>
+                <div class="item-dropdown">
+                    <a class="dropdown-item" href="/blog">Blog</a>
+                </div>
+                <div class="item-dropdown">
+                    <a class="dropdown-item" href="/duvidas">Duvidas Frenquentes</a>
+                </div>
+                <div class="item-dropdown">
+                    <a class="dropdown-item" href="/videos">Vídeos</a>
+                </div>
+            </div>
+
+            <div class="menu-item-simple">
+                <a href="/contato" class="nav-link">Contato</a>
+            </div>
+
+        </div>
+    </div>
+</div>

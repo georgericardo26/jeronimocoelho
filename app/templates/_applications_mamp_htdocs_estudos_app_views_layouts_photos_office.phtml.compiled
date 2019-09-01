@@ -1,0 +1,17 @@
+<div class="container photos">
+
+
+    <?php foreach ($galeria_clinic as $item_galeria_clinic) { ?>
+
+    <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_galeria_clinic->imagem]; ?>
+    <?php $img = join($arr, ''); ?>
+
+    <a href="<?= $img ?>" alt="<?= $item_galeria_clinic->titulo ?>" class="js-img-viwer" data-caption="<?= $item_galeria_clinic->titulo ?>"  data-id="<?= $item_galeria_clinic->id ?>">
+        <?= $this->tag->image([$img, 'width' => '260']) ?>
+    </a>
+
+
+    <?php } ?>
+
+
+</div>

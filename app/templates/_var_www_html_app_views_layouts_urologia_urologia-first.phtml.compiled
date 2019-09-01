@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="content-inside-urol-entry">
+    <div class="content-inside-cover-urol">
+        <div class="row">
+            <div class="entry-head-blog-into col-md-12 text-center">
+                <h1>Saiba tudo sobre Urologia</h1>
+                <img class="entry-head-blog-img" src="<?= $this->url->getStatic('assets/images/icon-blog-entry.png') ?>">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-inside-blog-second">
+    <div class="init-bar-blog">
+        <div class="row">
+
+            <div class="col-md-6">
+                <!--<?= $this->partial('layouts/blog/search') ?> -->
+            </div>
+
+
+
+            <div class="col-md-6">
+                <ul class="paginator list-inline">
+                    <li class="list-inline-item">Pagina <?= $urol->current ?> de <?= $urol->total_pages ?></li>
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->first ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-first.png') ?>">
+
+                        </a></li>
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->before ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-previous.png') ?>">
+
+                        </a></li>
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->next ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-next.png') ?>">
+
+                        </a></li>
+                    <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->last ?>">
+
+                            <img src="<?= $this->url->getStatic('public/assets/img/icon-last.png') ?>">
+
+                        </a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    <hr>

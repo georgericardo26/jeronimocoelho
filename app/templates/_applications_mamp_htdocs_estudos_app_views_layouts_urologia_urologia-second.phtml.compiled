@@ -1,0 +1,53 @@
+</div>
+<div class="content-inside-blog-second">
+<hr>
+<div class="init-bar-blog">
+    <div class="row">
+
+        <div class="col-md-6">
+
+        </div>
+
+
+        <div class="col-md-6">
+            <ul class="paginator list-inline">
+                <li class="list-inline-item">Pagina <?= $urol->current ?> de <?= $urol->total_pages ?></li>
+                <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->first ?>">
+
+                        <img src="<?= $this->url->getStatic('public/assets/img/icon-first.png') ?>">
+
+                    </a></li>
+                <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->before ?>">
+
+                        <img src="<?= $this->url->getStatic('public/assets/img/icon-previous.png') ?>">
+
+                    </a></li>
+                <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->next ?>">
+
+                        <img src="<?= $this->url->getStatic('public/assets/img/icon-next.png') ?>">
+
+                    </a></li>
+                <li class="list-inline-item"><a class="button-paginator" href="/urologia/page/<?= $urol->last ?>">
+
+                        <img src="<?= $this->url->getStatic('public/assets/img/icon-last.png') ?>">
+
+                    </a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+</div>
+
+
+<?= $this->partial('layouts/subscribe') ?>
+
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

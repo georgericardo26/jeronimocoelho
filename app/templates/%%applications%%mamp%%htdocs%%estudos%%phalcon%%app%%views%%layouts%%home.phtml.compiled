@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-br">
+<!--Head -->
+<?= $this->partial('layouts/head') ?>
+<body>
+
+<!-- Navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="entry">
+
+    <div class="incoming-slider">
+        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
+            <!-- Loading Screen -->
+            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                <?= $this->tag->image(['assets/images/loading/static-svg/spin.svg']) ?>
+            </div>
+
+            <!-- Slides Container -->
+            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
+               <?php $side = ['left' => 'slide-appear-content-left', 'right' => 'slide-appear-content-right']; ?>
+               <?php foreach ($slides as $item) { ?>
+                <div class="slide-appear">
+                    <?php $arr = ['assets/img/slide/', $item->imagem]; ?>
+                    <?php $img = join($arr, ''); ?>
+
+                    <?= $this->tag->image([$img, 'alt' => $item->titulo, 'data-u' => 'image']) ?>
+
+                    <div class='<?= $side[$item->lado] ?>'>
+                        <h1 class="wow fadeInDown" data-wow-delay="700ms"><?= Phalcon\Text::upper($item->titulo) ?></h1>
+                        <p class="wow fadeInDown" data-wow-delay="100ms"><?= trim($item->descricao) ?></p>
+
+                        <a class="btn btn-primary btn-custom-slider" href='/blog/post/<?= $item->id ?>'>Saiba Mais</a>
+                    </div>
+                </div>
+               <?php } ?>
+
+            </div>
+
+            <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <style>
+
+            </style>
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+            <!--#endregion Arrow Navigator Skin End -->
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+</div>
+
+
+
+<div class="content-inside-blog">
+
+    <h1 class="title-1">Entenda mais sobre</h1>
+    <p class="subtitle-1">Acompanhe os últimos conteúdos sobre urologia.</p>
+
+    <div class="sub-content-blog">
+        <div class="row">
+
+          <?php foreach ($urologia as $item_urol) { ?>
+
+            <?php $arr = ['assets/img/img_blog/', $item_urol->galeria->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+
+            <div class="col-md-4 text-center">
+                <div class="item-pre-blog wow bounceIn" data-wow-delay="1500ms">
+                    <img src='<?= $img ?>'>
+                </div>
+                <p class="subtitle-2 wow fadeInUp" data-wow-delay="1000ms"><?= $item_urol->urologia->titulo ?></p>
+                <a class="btn btn-primary btn-custom-slider wow fadeInUp" data-wow-delay="1100ms" href='/urologia/<?= $item_urol->urologia->id ?>'>Saiba Mais</a>
+            </div>
+
+          <?php } ?>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Perguntas Recentes</h1>
+    <p class="subtitle-1">Veja as principais perguntas feitas por leitores.</p>
+
+    <?php foreach ($duvidas as $item_duvidas) { ?>
+
+    <div class="sub-content-blog questions">
+        <div class="ask-blog">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="ask-blog-part1">
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-center">
+                    <div class="ask-blog-part2">
+                        <h1 class="title-2"><?= $item_duvidas->pergunta ?></h1>
+                    </div>
+                    <a class="btn btn-primary btn-custom-ask wow fadeInUp" data-wow-delay="1100ms" href="javascript:void(0)">VEJA A RESPOSTA</a>
+
+                </div>
+
+                <div class="col-md-2">
+                    <div class="ask-blog-part3">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="answer">
+            <p><?= $item_duvidas->resposta ?></p>
+        </div>
+    </div>
+
+    <?php } ?>
+
+
+    <div class="row know-more">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary btn-custom-slider" href='/perguntas/'>Clique e veja todas as perguntas</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="content-inside-blog">
+
+    <h1 class="title-1">Satisfacao e credibilidade no atendimento</h1>
+    <p class="subtitle-1">Veja o que alguns de nossos clientes dizem.</p>
+
+    <div class="sub-content-blog">
+        <div class="slideshow-container">
+
+            <?php foreach ($satisfacoes as $sat) { ?>
+
+                <div class="mySlides fade_slider slide_space">
+                    <div class="row frame">
+                        <div class="col-md-3 slide2-photo-icon">
+                            <img class="photo-icon" src="assets/images/user-icon.jpg">
+                        </div>
+                        <div class="col-md-9">
+                            <h1 class="title-2"><?= $sat->cliente ?></h1>
+                            <p class="subtitle-4"> <?= $sat->satisfacao ?> </p>
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Últimas Publicações</h1>
+    <p class="subtitle-1">Confira as principais informações</p>
+
+
+    <div class="sub-content-blog questions">
+        <div class="row">
+
+            <?php foreach ($blog as $index => $item_blog) { ?>
+                <?php $arr = ['assets/img/img_blog/', $item_blog->galeria->imagem]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php if ($index < 3) { ?>
+
+                    <div class="col-md-4 text-center">
+                        <a class="link-blog" href='/blog/<?= $item_blog->blog->id ?>'>
+                            <div class="item-pre-blog-2">
+                                <img src='<?= $img ?>'>
+                            </div>
+                            <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                            <div class="author-blog list-inline">
+                                <div class="list-inline-item photo-blog">
+                                    <img src="assets/images/user-icon.jpg">
+                                </div>
+                                <div class="list-inline-item photo-blog">
+                                    <p class="title-3">
+                                       <?php foreach ($admin_user as $admin_user_item) { ?>
+                                        <?= $admin_user_item->usuario ?>
+                                        <?php } ?>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                <?php } ?>
+            <?php } ?>
+
+        </div>
+    </div>
+
+    <div class="row know-more">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary btn-custom-ask-2 wow fadeInUp" data-wow-delay="1100ms" href="/blog">ACESSE O BLOG</a>
+        </div>
+    </div>
+</div>
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+
+</body>
+</html>
+

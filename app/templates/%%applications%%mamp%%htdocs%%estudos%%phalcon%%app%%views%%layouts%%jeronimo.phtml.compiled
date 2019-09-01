@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Head -->
+    <?= $this->partial('layouts/head') ?>
+</head>
+<body>
+<!-- navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+<div class="entry content-inside-blog-3">
+    <div class="row">
+        <div class="col-md-6 section-about-us text-center">
+            <h1 class="title-about-us">Conheça <span>Jerônimo Coelho</span></h1>
+            <p class="subtitle-about-us">Conheça um pouco mais sobre seu trabalho.</p>
+
+        </div>
+
+        <div class="col-md-6 section-about-us-image">
+            <div class="image-about-us">
+                <img src="assets/images/doctor.png">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="content-inside-blog-3">
+
+    <h1 class="title-1">Quem é Dr. Jerônimo Coelho?</h1>
+    <p class="subtitle-1"></p>
+
+    <div class="sub-content-blog">
+        <div class="text-about-us">
+            <?php foreach ($admin_user as $admin_user_item) { ?>
+            <?= $admin_user_item->sobre ?>
+            <?php } ?>
+        </div>
+        <div class="photo-about-us">
+            <?php foreach ($admin_user as $admin_user_item) { ?>
+            <?php $arr = ['assets/img/img_blog/', $admin_user_item->galeria->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+
+            <img class="photo-about-profile" src='<?= $img ?>'>
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+    <div class="second-part-about-us">
+        <ul class="list-inline badges">
+            <li class="badges-item list-inline-item"><img src="images/selo1.jpg"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo2.jpg"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo3.jpg"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo4.png"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo6.png"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo7.jpg"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo8.png"></li>
+            <li class="badges-item list-inline-item"><img src="images/selo9.jpg"></li>
+
+        </ul>
+    </div>
+
+    <div class="under-line">
+    </div>
+</div>
+
+<div class="entry content-inside-blog-2">
+    <div class="about-us-qualify">
+        <h1 class="title-1">Qualificações</h1>
+    </div>
+
+
+    <div class="qualifications-text">
+        <div class="row inside-qualifications">
+            <div class="col-md-6 into-strip">
+                <div class="strip-left">
+                    Residência Médica em Cirurgia Geral no Hospital Geral de Fortaleza
+                </div>
+                <div class="strip-right">
+                    Residência Médica em Cirurgia Vídeo - Laparoscópica no Hospital Geral de Fortaleza
+                </div>
+
+                <div class="strip-left">
+                    Residência Médica em Urologia-Andrologia no Hospital Geral de Fortaleza
+                </div>
+                <div class="strip-right">
+                    Membro Titular do Colégio Brasileiro de Cirurgiões
+                </div>
+
+                <div class="strip-left">
+                    Membro Titular da Sociedade Brasileira de Urologia
+                </div>
+
+
+            </div>
+            <div class="col-md-6 into-strip">
+                <div class="strip-left">
+                    Membro da Confereración Americana de Urologia
+                </div>
+                <div class="strip-right">
+                    Membro da International Society for Sexual Medicine
+                </div>
+
+                <div class="strip-left">
+                    Membro da European Association of Urology
+                </div>
+                <div class="strip-right">
+                    Curso de Aperfeiçoamento em Técnicas Avançadas de Ultrassonografia Urológica e
+                    Biópsia Prostática reconhecido pela Sociedade Brasileira de Ultrassonografia
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content-inside-blog-3">
+    <div class="container">
+
+
+        <div class="photo-gallery" ID="ngy2p222" data-nanogallery2='{
+        "itemsBaseURL": "http://estudos:8888/jeronimo/images/office/",
+        "thumbnailWidth": "auto",
+        "thumbnailDisplayTransition": "flipDown",
+        "thumbnailHoverEffect2": "imageScaleIn80|imageSepiaOff|labelAppear75",
+        "thumbnailAlignment": "center"
+      }'>
+
+
+            <a class="photo-gallery-img" href="1.jpg" data-ngthumb="1.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="2.jpg" data-ngthumb="2.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="3.jpg" data-ngthumb="3.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="4.jpg" data-ngthumb="4.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="5.jpg" data-ngthumb="5.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="6.jpg" data-ngthumb="6.jpg" data-ngdesc="">Imagem Consultório</a>
+            <a class="photo-gallery-img" href="7.jpg" data-ngthumb="7.jpg" data-ngdesc="">Imagem Consultório</a>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Últimas Publicações</h1>
+    <p class="subtitle-1">Confira as principais informações</p>
+
+    <div class="sub-content-blog questions">
+        <div class="row">
+
+            <?php foreach ($blog as $index => $item_blog) { ?>
+            <?php $arr = ['assets/img/img_blog/', $item_blog->galeria->imagem]; ?>
+            <?php $img = join($arr, ''); ?>
+            <?php if ($index < 3) { ?>
+
+            <div class="col-md-4 text-center">
+                <a class="link-blog" href='/blog/<?= $item_blog->blog->id ?>'>
+                    <div class="item-pre-blog-2">
+                        <img src='<?= $img ?>'>
+                    </div>
+                    <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                    <div class="author-blog list-inline">
+                        <div class="list-inline-item photo-blog">
+                            <img src="assets/images/user-icon.jpg">
+                        </div>
+                        <div class="list-inline-item photo-blog">
+                            <p class="title-3">
+                                <?php foreach ($admin_user as $admin_user_item) { ?>
+                                <?= $admin_user_item->usuario ?>
+                                <?php } ?>
+
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <?php } ?>
+            <?php } ?>
+
+        </div>
+    </div>
+
+    <div class="row know-more">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary btn-custom-ask-2 wow fadeInUp" data-wow-delay="1100ms" href="/blog">ACESSE O BLOG</a>
+        </div>
+    </div>
+
+</div>
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% for admin_user_item in admin_user %}
+    <title>{{ admin_user_item.usuario }}{{ title }}</title>
+    {% endfor %}
+
+    {{ assets.outputCss('header') }}
+</head>

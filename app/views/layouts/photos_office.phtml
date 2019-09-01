@@ -1,0 +1,17 @@
+<div class="container photos">
+
+
+    {% for item_galeria_clinic in  galeria_clinic %}
+
+    {% set arr = [static_url('assets/img/img_blog/'), item_galeria_clinic.imagem] %}
+    {% set img = arr|join('') %}
+
+    <a href="{{ img }}" alt="{{ item_galeria_clinic.titulo }}" class="js-img-viwer" data-caption="{{ item_galeria_clinic.titulo }}"  data-id="{{ item_galeria_clinic.id }}">
+        {{ image(img, 'width':'260') }}
+    </a>
+
+
+    {% endfor %}
+
+
+</div>

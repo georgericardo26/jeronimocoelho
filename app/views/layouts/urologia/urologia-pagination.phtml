@@ -1,0 +1,41 @@
+{{ partial('layouts/urologia/urologia-first') }}
+
+<div class="entry-main-blog">
+   <div class="row">
+
+    {% for urol_itens in urol.items %}
+
+        {% set url = ['/urologia/post/', urol_itens.urologia.id] %}
+        {% set url_final = url|join('') %}
+
+        <div class="col-md-4 post-single">
+            <a class="link-blog" href="{{ url(url_final) }}">
+
+                <div class="title-content-featured">
+                    <p class="subtitle-3">{{ urol_itens.urologia.titulo }}</p>
+                    <p class="text-content-part">
+                        {{ strlen(urol_itens.urologia.conteudo, 200)|striptags }}...<span>Ver mais</span></p>
+                </div>
+
+                <div class="author-blog list-inline">
+                    <div class="list-inline-item photo-blog">
+                        <img src="{{ static_url('assets/images/user-icon.jpg') }}">
+                    </div>
+                    <div class="list-inline-item photo-blog"><p class="title-3">
+                            {% for item_admin in admin_user %}
+                            {{ item_admin.administrador.usuario }}
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <span class="date-post"></span>
+                </div>
+
+            </a>
+        </div>
+
+    {% endfor %}
+   </div>
+</div>
+
+
+{{ partial('layouts/urologia/urologia-second') }}

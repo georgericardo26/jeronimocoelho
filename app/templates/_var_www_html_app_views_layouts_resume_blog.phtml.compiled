@@ -1,0 +1,94 @@
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Últimas Publicações</h1>
+    <p class="subtitle-1">Confira as principais informações</p>
+
+    <!--<div class="sub-content-blog questions">
+        <div class="row">
+
+            <?php foreach ($resume_blog as $index => $item_blog) { ?>
+                <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php if ($index < 3) { ?>
+
+                <div class="col-md-4 text-center">
+                    <a class="link-blog" href='/blog/post/<?= $item_blog->blog->id ?>'>
+                        <div class="item-pre-blog-2">
+                            <img src='<?= $img ?>'>
+                        </div>
+                        <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                        <div class="author-blog list-inline">
+                            <div class="list-inline-item photo-blog">
+                                <img src='<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>'>
+                            </div>'
+                            <div class="list-inline-item photo-blog">
+                                <p class="title-3">
+                                    <?php foreach ($admin_footer as $admin_user_item) { ?>
+                                    <?= $admin_user_item->administrador->usuario ?>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <?php } ?>
+            <?php } ?>
+
+        </div>
+    </div>-->
+    <div class="content-inside-blog-resume">
+        <div class="all-content">
+            <div class="row">
+                <?php foreach ($resume_blog as $index => $item_blog) { ?>
+                <?php if ($index < 3) { ?>
+                <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+                <?php $url = ['blog/post/', $item_blog->blog->id]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php $url_post = join($url, ''); ?>
+
+                <div class="col-md-4 post-single">
+                    <a class="link-blog" href="<?= $this->url->get($url_post) ?>">
+
+                        <div class="img-entry">
+                            <img src="<?= $img ?>">
+                        </div>
+
+                        <div class="title-content-featured">
+                            <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                            <p class="text-content-part">
+                                <?= strip_tags(substr($item_blog->blog->conteudo, 0 ,200)) ?>...<span>Ver mais</span></p>
+
+                        </div>
+                    </a>
+                    <div class="author-blog list-inline">
+                        <div class="list-inline-item photo-blog">
+                            <img src="<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>">
+                        </div>
+                        <div class="list-inline-item photo-blog"><p class="title-3">
+                                <?php foreach ($admin_footer as $item_admin) { ?>
+                                <?= $item_admin->administrador->usuario ?>
+                                <?php } ?>
+                            </p>
+                        </div>
+                        <span class="like" data-post="<?= $item_blog->blog->id ?>">
+                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
+                                </span>
+                        <span class="amount-like">
+                                <?= $item_blog->blog->qtd_like ?>
+                                </span>
+                    </div>
+                </div>
+                <?php } ?>
+                <?php } ?>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row know-more">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary btn-custom-ask-2 wow fadeInUp" data-wow-delay="1100ms" href="/blog">ACESSE O BLOG</a>
+        </div>
+    </div>
+</div>

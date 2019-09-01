@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!--Head -->
+    {{ partial('layouts/head') }}
+</head>
+<body>
+<!-- navbar -->
+{{ partial('layouts/navbar') }}
+
+<div class="entry content-inside-blog-3">
+    <div class="row">
+        <div class="col-md-6 section-about-us text-center">
+            <h1 class="title-about-us">Dr. <span>Jerônimo Coelho</span></h1>
+            <p class="subtitle-about-us">Conheça um pouco mais sobre seu trabalho.</p>
+
+        </div>
+
+        <div class="col-md-6 section-about-us-image">
+            <div class="image-about-us">
+                <img src='{{ static_url('assets/images/doctor.png') }}'>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<div class="content-inside-blog-3">
+
+    <h1 class="title-1">Quem é Dr. Jerônimo Coelho?</h1>
+    <p class="subtitle-1"></p>
+
+
+    <div class="sub-content-blog">
+        <div class="text-about-us">
+            {% for admin_user_item in admin_user %}
+            {{ admin_user_item.administrador.sobre }}
+            {% endfor %}
+        </div>
+        <div class="photo-about-us">
+            {% for admin_user_item in admin_user %}
+            {% set arr = [static_url('assets/img/img_blog/'), admin_user_item.galeria.imagem] %}
+            {% set img = arr|join('') %}
+
+            <img class="photo-about-profile" src='{{ img }}'>
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <div class="second-part-about-us">
+        <ul class="list-inline badges">
+
+            {% for item_badges in badges %}
+
+            {% set arr = [static_url('assets/img/img_blog/'), item_badges.imagem] %}
+            {% set img = arr|join('') %}
+            <li class="badges-item list-inline-item"><img src="{{ img }}"></li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+    <div class="under-line">
+    </div>
+</div>
+
+<div class="entry content-inside-blog-2">
+    <div class="about-us-qualify">
+        <h1 class="title-1">Qualificações</h1>
+    </div>
+
+
+    <div class="qualifications-text">
+        <div class="row inside-qualifications">
+            <div class="col-md-6 into-strip">
+
+                {% for item_qualif1 in qualifications1 %}
+                <div class="strip-left">
+                    {{ item_qualif1.formacao }}
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="col-md-6 into-strip">
+
+                {% for item_qualif2 in qualifications2 %}
+
+                <div class="strip-left">
+                    {{ item_qualif2.formacao }}
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content-inside-blog-3">
+    {{ partial('layouts/photos_office') }}
+</div>
+
+<!-- blog resume -->
+{{ partial('layouts/resume_blog') }}
+
+
+<!--footer -->
+{{ partial('layouts/footer') }}
+</body>
+</html>

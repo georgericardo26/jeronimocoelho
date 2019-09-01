@@ -1,0 +1,45 @@
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Últimas Publicações</h1>
+    <p class="subtitle-1">Confira as principais informações</p>
+
+    <div class="sub-content-blog questions">
+        <div class="row">
+
+            <?php foreach ($resume_blog as $index => $item_blog) { ?>
+                <?php $arr = [$this->url->getStatic('assets/img/img_blog/'), $item_blog->galeria->imagem]; ?>
+                <?php $img = join($arr, ''); ?>
+                <?php if ($index < 3) { ?>
+
+                <div class="col-md-4 text-center">
+                    <a class="link-blog" href='/blog/<?= $item_blog->blog->id ?>'>
+                        <div class="item-pre-blog-2">
+                            <img src='<?= $img ?>'>
+                        </div>
+                        <p class="subtitle-3"><?= $item_blog->blog->titulo ?></p>
+                        <div class="author-blog list-inline">
+                            <div class="list-inline-item photo-blog">
+                                <img src='<?= $this->url->getStatic('assets/images/user-icon.jpg') ?>'>
+                            </div>'
+                            <div class="list-inline-item photo-blog">
+                                <p class="title-3">
+                                    <?php foreach ($admin_user as $admin_user_item) { ?>
+                                    <?= $admin_user_item->usuario ?>
+                                    <?php } ?>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <?php } ?>
+            <?php } ?>
+
+        </div>
+    </div>
+
+    <div class="row know-more">
+        <div class="col-md-12 text-center">
+            <a class="btn btn-primary btn-custom-ask-2 wow fadeInUp" data-wow-delay="1100ms" href="/blog">ACESSE O BLOG</a>
+        </div>
+    </div>
+</div>

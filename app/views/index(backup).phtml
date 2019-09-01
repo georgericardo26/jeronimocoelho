@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phalcon Tutorial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <?php echo $this->getContent();?>
+
+    <?php //echo $result;
+
+    echo $this->tag->linkTo(
+        array('signup',
+            'Sign Up Here!',
+            'class' => 'btn btn-primary'
+        )
+    );
+    ?>
+
+    <?php
+    if($result->count() > 0){
+        ?>
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="3">Users quantity: <?php echo $result->count(); ?></td>
+            </tr>
+            </tfoot>
+            <tbody>
+
+            <?php foreach ($result as $user) { ?>
+
+                <tr>
+                    <td><?php echo $user->id; ?></td>
+                    <td><?php echo $user->name; ?></td>
+                    <td><?php echo $user->email; ?></td>
+                    <td><?php echo $user->phone; ?></td>
+                    <td><?php echo $this->tag->linkTo('signup/edit/'.$user->id, 'editar'); ?></td>
+                    <td><?php echo $this->tag->linkTo('signup/delete/'.$user->id, 'deletar'); ?></td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
+        <?php
+    }
+
+    ?>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-br">
+<!--Head -->
+<?= $this->partial('layouts/head') ?>
+<body>
+
+<!-- Navbar -->
+<?= $this->partial('layouts/navbar') ?>
+
+
+<div class="entry">
+
+    <div class="incoming-slider">
+        <div class="slider1_container" id="slider1_container" style="">
+            <!-- Loading Screen -->
+            <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                <?= $this->tag->image(['assets/images/loading/static-svg/spin.svg']) ?>
+            </div>
+
+            <!-- Slides Container -->
+            <div class="slides" data-u="slides" style="">
+               <?php $side = ['left' => 'slide-appear-content-left', 'right' => 'slide-appear-content-right']; ?>
+               <?php foreach ($slides as $item) { ?>
+                <div class="slide-appear">
+                    <?php $arr = ['assets/img/slide/', $item->imagem]; ?>
+                    <?php $arr2 = ['assets/img/slide/', $item->imagem_mobile]; ?>
+                    <?php $img_desktop = join($arr, ''); ?>
+                    <?php $img_mobile = join($arr2, ''); ?>
+
+                    <?= $this->tag->image([$img_desktop, 'alt' => $item->titulo, 'class' => 'slide-desktop', 'data-u' => 'image']) ?>
+
+                    <div class='<?= $side[$item->lado] ?>'>
+                        <h1 class="wow fadeInDown" data-wow-delay="700ms"><?= Phalcon\Text::upper($item->titulo) ?></h1>
+                        <p class="wow fadeInDown" data-wow-delay="100ms"><?= trim($item->descricao) ?></p>
+
+                        <a class="btn btn-primary btn-custom-slider" href='/blog/post/<?= $item->id ?>'>Saiba Mais</a>
+                    </div>
+                </div>
+               <?php } ?>
+
+            </div>
+
+            <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <style>
+
+            </style>
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewBox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+            <!--#endregion Arrow Navigator Skin End -->
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+</div>
+
+
+<div class="content-inside-blog-second">
+
+            <h1 class="title-1">Bem vindo ao nosso portal</h1>
+            <p class="subtitle-1">Fique por dentro de nosso conteúdo.</p>
+
+</div>
+
+
+<div class="content-inside-blog-resume-second">
+    <div class="w3-row">
+
+        <div class="w3-col l6 s6 left-blog">
+             <a href="/urologia" class="link-blog-resume">
+                 <div class="entry-head-blog w3-col l12 s12 text-center">
+                    <div class="side-cover">
+                        <h1>UROLOGIA</h1>
+                        <img class="entry-head-blog-img-static" src="<?= $this->url->getStatic('assets/images/icon-blog-entry.png') ?>">
+                    </div>
+                </div>
+
+             </a>
+        </div>
+
+
+        <div class="w3-col l6 s6 right-blog">
+            <a href="/blog" class="link-blog-resume">
+                <div class="entry-head-blog w3-col l12 s12 text-center">
+                    <div class="side-cover">
+                        <h1>BLOG</h1>
+                        <img class="entry-head-blog-img-static" src="<?= $this->url->getStatic('assets/images/icon-blog-entry.png') ?>">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="entry content-inside-blog-2">
+    <h1 class="title-1">Perguntas Recentes</h1>
+    <p class="subtitle-1">Veja as principais perguntas feitas por leitores.</p>
+
+    <?php foreach ($duvidas as $item_duvidas) { ?>
+
+    <div class="sub-content-blog questions">
+        <div class="ask-blog">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="ask-blog-part1">
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-center">
+                    <div class="ask-blog-part2">
+                        <h1 class="title-2"><?= $item_duvidas->pergunta ?></h1>
+                    </div>
+                    <a class="btn btn-primary btn-custom-ask wow fadeInUp" data-wow-delay="1100ms" href="javascript:void(0)">VEJA A RESPOSTA</a>
+
+                </div>
+
+                <div class="col-md-2">
+                    <div class="ask-blog-part3">
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="answer">
+            <p><?= $item_duvidas->resposta ?></p>
+        </div>
+    </div>
+
+    <?php } ?>
+
+
+    <div class="row know-more">
+        <div class="w3-col l12 s12 text-center">
+            <a class="btn btn-primary btn-custom-slider" href='/duvidas'>Clique e veja todas as perguntas</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="content-inside-blog">
+
+    <h1 class="title-1">Satisfação e credibilidade no atendimento</h1>
+    <p class="subtitle-1">Veja o que alguns de nossos clientes dizem.</p>
+
+    <div class="sub-content-blog">
+        <div class="slideshow-container">
+
+            <?php foreach ($satisfacoes as $sat) { ?>
+
+                <div class="mySlides fade_slider slide_space">
+                    <div class="w3-row frame">
+                        <div class="w3-col l3 s3 slide2-photo-icon">
+                            <img class="photo-icon" src="assets/images/user-icon.jpg">
+                        </div>
+                        <div class="w3-col l9 s9">
+                            <h1 class="title-2"><?= $sat->cliente ?></h1>
+                            <p class="subtitle-4"> <?= $sat->satisfacao ?> </p>
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+
+
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- blog resume -->
+<?= $this->partial('layouts/resume_blog') ?>
+
+<!--footer -->
+<?= $this->partial('layouts/footer') ?>
+
+</body>
+</html>
+
